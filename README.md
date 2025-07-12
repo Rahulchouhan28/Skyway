@@ -241,5 +241,4 @@ For support or questions:
 
 ---
 
-**Happy Flying! ✈️** # Skyway
-flight booking website
+**Happy Flying! ✈️** 
