@@ -165,17 +165,26 @@ const SkyWay = {
         const burger = document.querySelector('.burger');
         const nav = document.querySelector('.nav-links');
         if (burger && nav) {
-            burger.addEventListener('click', () => {
+            burger.addEventListener('click', (e) => {
+                e.stopPropagation();
                 nav.classList.toggle('active');
                 burger.classList.toggle('active');
             });
             
-            // Close mobile menu when a link is clicked
-            nav.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
+            // Close mobile menu when any interactive element inside is clicked (except theme toggle)
+            nav.querySelectorAll('a, button:not(.theme-toggle)').forEach(el => {
+                el.addEventListener('click', () => {
                     nav.classList.remove('active');
                     burger.classList.remove('active');
                 });
+            });
+
+            // Close when clicking outside of the menu
+            document.addEventListener('click', (e) => {
+                if (nav.classList.contains('active') && !nav.contains(e.target) && !burger.contains(e.target)) {
+                    nav.classList.remove('active');
+                    burger.classList.remove('active');
+                }
             });
         }
     },
