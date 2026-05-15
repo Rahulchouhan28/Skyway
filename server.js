@@ -45,17 +45,17 @@ const server = http.createServer((req, res) => {
     if (req.url === '/api/config') {
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({
-            SKYSCANNER_API_KEY: env.SKYSCANNER_API_KEY ?? '',
-            AMADEUS_API_KEY: env.AMADEUS_API_KEY ?? '',
-            AMADEUS_API_SECRET: env.AMADEUS_API_SECRET ?? '',
-            AVIATIONSTACK_API_KEY: env.AVIATIONSTACK_API_KEY ?? '',
-            SKYSCANNER_API_URL: env.SKYSCANNER_API_URL ?? '',
-            AMADEUS_API_URL: env.AMADEUS_API_URL ?? '',
-            AVIATIONSTACK_API_URL: env.AVIATIONSTACK_API_URL ?? '',
-            DEFAULT_CURRENCY: env.DEFAULT_CURRENCY ?? 'INR',
-            DEFAULT_MARKET: env.DEFAULT_MARKET ?? 'IN',
-            DEFAULT_LOCALE: env.DEFAULT_LOCALE ?? 'en-IN',
-            MAX_RESULTS: parseInt(env.MAX_RESULTS ?? '50', 10),
+            SKYSCANNER_API_KEY: env.SKYSCANNER_API_KEY ?? process.env.SKYSCANNER_API_KEY ?? '',
+            AMADEUS_API_KEY: env.AMADEUS_API_KEY ?? process.env.AMADEUS_API_KEY ?? '',
+            AMADEUS_API_SECRET: env.AMADEUS_API_SECRET ?? process.env.AMADEUS_API_SECRET ?? '',
+            AVIATIONSTACK_API_KEY: env.AVIATIONSTACK_API_KEY ?? process.env.AVIATIONSTACK_API_KEY ?? '',
+            SKYSCANNER_API_URL: env.SKYSCANNER_API_URL ?? process.env.SKYSCANNER_API_URL ?? '',
+            AMADEUS_API_URL: env.AMADEUS_API_URL ?? process.env.AMADEUS_API_URL ?? '',
+            AVIATIONSTACK_API_URL: env.AVIATIONSTACK_API_URL ?? process.env.AVIATIONSTACK_API_URL ?? '',
+            DEFAULT_CURRENCY: env.DEFAULT_CURRENCY ?? process.env.DEFAULT_CURRENCY ?? 'INR',
+            DEFAULT_MARKET: env.DEFAULT_MARKET ?? process.env.DEFAULT_MARKET ?? 'IN',
+            DEFAULT_LOCALE: env.DEFAULT_LOCALE ?? process.env.DEFAULT_LOCALE ?? 'en-IN',
+            MAX_RESULTS: parseInt(env.MAX_RESULTS ?? process.env.MAX_RESULTS ?? '50', 10),
         }));
         return;
     }

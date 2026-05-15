@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "buildCommand": "echo 'Static build'",
+  "outputDirectory": ".",
+  "routes": [
+    {
+      "src": "/api/config",
+      "dest": "/api/config.js"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
