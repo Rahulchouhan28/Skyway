@@ -1,0 +1,15 @@
+node_modules/
+.claude/
+.vscode/
+.git/
+*.md
+.env
+.env.example
+.gitignore
+server.js
+download_images.js
+start-firewall.bat
+flight-booking/
+Dockerfile
+docker-compose.yml
+.dockerignore

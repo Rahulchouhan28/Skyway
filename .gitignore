@@ -1,0 +1,16 @@
+# Environment secrets
+.env
+
+# Dependencies
+node_modules/
+
+# IDE
+.vscode/
+.claude/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Build artifacts
+*.log

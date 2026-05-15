@@ -1,0 +1,13 @@
+{
+  "name": "skyway-flight-booking",
+  "version": "1.0.0",
+  "description": "SkyWay — Premium Flight Booking Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["flight", "booking", "travel"],
+  "author": "SkyWay",
+  "license": "MIT"
+}
