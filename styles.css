@@ -136,9 +136,9 @@ body {
     }
 }
 
-/* ── Touch targets — min 44px (P2) ── */
+/* ── Touch targets — min 48px (P2 / SKILL 12) ── */
 a, button, [role="button"], input, select, textarea {
-    min-height: 44px;
+    min-height: 48px;
 }
 
 button, [role="button"], .btn-book, .btn-primary, .btn-login, .btn-signup {

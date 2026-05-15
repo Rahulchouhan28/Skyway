@@ -164,10 +164,18 @@ const SkyWay = {
 
         const burger = document.querySelector('.burger');
         const nav = document.querySelector('.nav-links');
-        if (burger) {
+        if (burger && nav) {
             burger.addEventListener('click', () => {
                 nav.classList.toggle('active');
                 burger.classList.toggle('active');
+            });
+            
+            // Close mobile menu when a link is clicked
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('active');
+                    burger.classList.remove('active');
+                });
             });
         }
     },
