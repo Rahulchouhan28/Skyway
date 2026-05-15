@@ -164,11 +164,14 @@ const SkyWay = {
 
         const burger = document.querySelector('.burger');
         const nav = document.querySelector('.nav-links');
+        const overlay = document.querySelector('.nav-overlay');
+        
         if (burger && nav) {
             burger.addEventListener('click', (e) => {
                 e.stopPropagation();
                 nav.classList.toggle('active');
                 burger.classList.toggle('active');
+                if (overlay) overlay.classList.toggle('active');
             });
             
             // Close mobile menu when any interactive element inside is clicked (except theme toggle)
@@ -176,16 +179,18 @@ const SkyWay = {
                 el.addEventListener('click', () => {
                     nav.classList.remove('active');
                     burger.classList.remove('active');
+                    if (overlay) overlay.classList.remove('active');
                 });
             });
 
-            // Close when clicking outside of the menu
-            document.addEventListener('click', (e) => {
-                if (nav.classList.contains('active') && !nav.contains(e.target) && !burger.contains(e.target)) {
+            // Close when clicking the overlay explicitly
+            if (overlay) {
+                overlay.addEventListener('click', () => {
                     nav.classList.remove('active');
                     burger.classList.remove('active');
-                }
-            });
+                    overlay.classList.remove('active');
+                });
+            }
         }
     },
 
